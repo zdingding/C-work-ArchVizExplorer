@@ -9,7 +9,8 @@ public class ArchVizExplorerEditorTarget : TargetRules
 	{
 		Type = TargetType.Editor;
 		DefaultBuildSettings = BuildSettingsVersion.V4;
-
+		// 添加这行代码解决警告
+		IncludeOrderVersion = EngineIncludeOrderVersion.Latest;
 		ExtraModuleNames.AddRange( new string[] { "ArchVizExplorer" } );
 	}
 }
