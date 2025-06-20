@@ -11,6 +11,11 @@ ADigitalTwinScene::ADigitalTwinScene()
 
 }
 
+void ADigitalTwinScene::OnConfirmEntry()
+{
+
+	
+}
 // Called when the game starts or when spawned
 void ADigitalTwinScene::BeginPlay()
 {
