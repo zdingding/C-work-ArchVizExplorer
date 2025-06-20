@@ -3,3 +3,23 @@
 
 #include "DigitalTwinBase.h"
 
+UDigitalTwinBase::UDigitalTwinBase()
+{
+}
+
+void UDigitalTwinBase::InitializeDigitalTwin()
+{
+	// 具体实现代码
+	
+}
+
+TArray<FString> UDigitalTwinBase::GetAvailableScenes() const
+{
+	TArray<FString> SceneNames;
+	return SceneNames;
+	
+}
+
+void UDigitalTwinBase::EnterScene(const FString& SceneName)
+{
+}

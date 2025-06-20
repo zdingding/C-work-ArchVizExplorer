@@ -11,14 +11,7 @@ public class DigitalTwinFramework : ModuleRules
 		PublicIncludePaths.AddRange(
 			new string[] {
 				// ... add public include paths required here ...
-				"Core",
-				"CoreUObject",
-				"Engine",
-				"InputCore",
-				"UMG",
-				"LevelSequence",
-				"MovieScene",
-				"AssetRegistry"
+				
 			}
 			);
 				
@@ -34,6 +27,13 @@ public class DigitalTwinFramework : ModuleRules
 			new string[]
 			{
 				"Core",
+				"CoreUObject",
+				"Engine",
+				"InputCore",
+				"UMG",
+				"LevelSequence",
+				"MovieScene",
+				"AssetRegistry"
 				// ... add other public dependencies that you statically link with here ...
 			}
 			);
@@ -46,6 +46,8 @@ public class DigitalTwinFramework : ModuleRules
 				"Engine",
 				"Slate",
 				"SlateCore",
+				"EditorStyle",
+				"UnrealEd"
 				// ... add private dependencies that you statically link with here ...	
 			}
 			);

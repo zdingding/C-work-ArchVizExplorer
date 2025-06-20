@@ -13,6 +13,8 @@ UCLASS(Abstract,Blueprintable)
 class DIGITALTWINFRAMEWORK_API UDigitalTwinBase : public UObject
 {
 	GENERATED_BODY()
+	public:
+	UDigitalTwinBase();
 	// 初始化数字孪生系统
 UFUNCTION(BlueprintCallable, Category = "DigitalTwin")
 	virtual void InitializeDigitalTwin();
