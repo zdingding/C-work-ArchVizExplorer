@@ -1,6 +1,6 @@
 {
 	"FileVersion": 3,
-	"EngineAssociation": "5.3",
+	"EngineAssociation": "5.6",
 	"Category": "",
 	"Description": "",
 	"Modules": [
@@ -9,7 +9,8 @@
 			"Type": "Runtime",
 			"LoadingPhase": "Default",
 			"AdditionalDependencies": [
-				"Engine"
+				"Engine",
+				"UMG"
 			]
 		}
 	],
@@ -56,51 +57,24 @@
 			"Enabled": true
 		},
 		{
-			"Name": "CesiumForUnreal",
-			"Enabled": false,
-			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/87b0d05800a545d49bf858ef3458c4f7",
-			"SupportedTargetPlatforms": [
-				"Win64",
-				"Mac",
-				"Linux",
-				"Android",
-				"IOS"
-			]
+			"Name": "PCG",
+			"Enabled": true
 		},
 		{
-			"Name": "AndroidMedia",
-			"Enabled": false
+			"Name": "PCGExternalDataInterop",
+			"Enabled": true
 		},
 		{
-			"Name": "AndroidMoviePlayer",
-			"Enabled": false
+			"Name": "PCGGeometryScriptInterop",
+			"Enabled": true
 		},
 		{
-			"Name": "OnlineSubsystemGooglePlay",
-			"Enabled": false,
-			"SupportedTargetPlatforms": [
-				"Android"
-			]
+			"Name": "FastGeoStreaming",
+			"Enabled": true
 		},
-		{
-			"Name": "AndroidPermission",
-			"Enabled": false
-		},
-		{
-			"Name": "AndroidFileServer",
-			"Enabled": false
-		},
-		{
-			"Name": "GooglePAD",
-			"Enabled": false
-		},
-		{
-			"Name": "AndroidDeviceProfileSelector",
-			"Enabled": false
+		 {
+        "Name": "SQLiteSupport",
+        "Enabled": true
 		}
-	],
-	"TargetPlatforms": [
-		"Linux",
-		"Windows"
 	]
 }

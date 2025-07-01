@@ -8,7 +8,7 @@ public class ArchVizExplorerTarget : TargetRules
 	public ArchVizExplorerTarget(TargetInfo Target) : base(Target)
 	{
 		Type = TargetType.Game;
-		DefaultBuildSettings = BuildSettingsVersion.V4;
+		DefaultBuildSettings = BuildSettingsVersion.V5;
 	
 		ExtraModuleNames.AddRange( new string[] { "ArchVizExplorer" } );
 	}
