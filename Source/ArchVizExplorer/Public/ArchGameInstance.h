@@ -45,6 +45,7 @@ private:
 	// 动态加载关卡
 	void LoadLevelsFromFolder(const FString& FolderPath);
 	// 登录状态
+	UPROPERTY(EditAnywhere,Category = "IsLogIn")
 	bool bIsLoggedIn = false;
     
 	// 关卡列表
