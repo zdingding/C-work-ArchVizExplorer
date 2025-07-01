@@ -28,8 +28,16 @@ void UArchGameInstance::LoadLevel(const FName& LevelName)
 {
 	if (AvailableLevels.Contains(LevelName))
 	{
+		// 确保清理当前世界
+		CleanupCurrentWorld();
 		UGameplayStatics::OpenLevel(GetWorld(), LevelName);
 	}
+}
+
+void UArchGameInstance::CleanupCurrentWorld()
+{
+
+	
 }
 
 void UArchGameInstance::ReturnToMainMenu()

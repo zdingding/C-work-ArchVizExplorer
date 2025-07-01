@@ -30,7 +30,7 @@ public:
 	// 加载关卡
 	UFUNCTION(BlueprintCallable, Category = "Levels")
 	void LoadLevel(const FName& LevelName);
-    
+	void CleanupCurrentWorld();
 	// 返回主菜单
 	UFUNCTION(BlueprintCallable, Category = "Levels")
 	void ReturnToMainMenu();
@@ -40,16 +40,21 @@ protected:
 
 private:
 	// 硬编码的用户凭证
-	const FString ValidUsername = "test123";
-	const FString ValidPassword = "test123";
+	UPROPERTY(Config)
+	 FString ValidUsername = "test123";
+	UPROPERTY(Config)
+	 FString ValidPassword = "test123";
 	// 动态加载关卡
 	void LoadLevelsFromFolder(const FString& FolderPath);
 	// 登录状态
 	UPROPERTY(EditAnywhere,Category = "IsLogIn")
-	bool bIsLoggedIn = false;
+	bool bIsLoggedIn = true;
     
 	// 关卡列表
 	UPROPERTY(EditDefaultsOnly, Category = "Levels")
-	TArray<FName> AvailableLevels;	
-	
+	TArray<FName> AvailableLevels;
+
+	//控制台命令(屏幕分辨率/锐化值)
+	UPROPERTY(Config)
+	TArray<FString> ConsoleCommandList;
 };

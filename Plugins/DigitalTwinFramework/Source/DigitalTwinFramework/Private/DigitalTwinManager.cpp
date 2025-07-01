@@ -21,7 +21,7 @@ void UDigitalTwinManager::InitializeDigitalTwin()
 
 TArray<FString> UDigitalTwinManager::GetAvailableScenes() const
 {
-	return Super::GetAvailableScenes();
+	
 	TArray<FString> SceneNames;
 	SceneMap.GetKeys(SceneNames);
 	return SceneNames;
@@ -35,6 +35,8 @@ void UDigitalTwinManager::EnterScene(const FString& SceneName)
 		FString MapPath = *SceneMap.Find(SceneName);
 		UE_LOG(LogTemp, Log, TEXT("Entering scene: %s"), *MapPath);
 		// 实际加载场景的代码
+		// 场景加载逻辑优化
+		UGameplayStatics::OpenLevel(GetWorld(), FName(*MapPath));
 	}
 	else
 	{
@@ -48,7 +50,16 @@ void UDigitalTwinManager::LoadSceneConfiguration()
 	SceneMap.Empty();
 	// 定义场景根路径
 	const FString SceneRootPath = "/Game/ArchVizExplorer/Maps/";
-
+	// 优化：使用更安全的路径处理
+	auto AddScene = [&](const FString& Name, const FString& Map) {
+		FString FullPath = FPaths::Combine(*SceneRootPath, *Map);
+		if (FPackageName::DoesPackageExist(FullPath)) {
+			SceneMap.Add(Name, FullPath);
+		}
+		else {
+			UE_LOG(LogTemp, Warning, TEXT("Map not found: %s"), *FullPath);
+		}
+		};
 	// 获取所有地图资产（实际项目中应从配置文件读取）
 	SceneMap.Add("FactoryFloor", SceneRootPath + "Factory_Floor");
 	SceneMap.Add("Warehouse", SceneRootPath + "Warehouse");

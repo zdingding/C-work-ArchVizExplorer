@@ -11,22 +11,4 @@ ADigitalTwinScene::ADigitalTwinScene()
 
 }
 
-void ADigitalTwinScene::OnConfirmEntry()
-{
-
-	
-}
-// Called when the game starts or when spawned
-void ADigitalTwinScene::BeginPlay()
-{
-	Super::BeginPlay();
-	
-}
-
-// Called every frame
-void ADigitalTwinScene::Tick(float DeltaTime)
-{
-	Super::Tick(DeltaTime);
-
-}
 
